@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: url('images/header-bg.jpg') no-repeat center center;
+    background-size: cover; /* Giúp ảnh phủ toàn bộ header */
+    height: 250px; /* Điều chỉnh chiều cao header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Chữ dễ nhìn */
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Tạo lớp phủ mờ giúp chữ dễ đọc */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Điều chỉnh độ mờ */
+    z-index: 1;
+}
+
+/* Đảm bảo nội dung header nằm trên lớp phủ */
+header h1, header p {
+    position: relative;
+    z-index: 2;
+}
+
+
+h1, h2 {
+    color: rgb(7, 7, 7); /* Đổi thành màu bạn muốn */
+}
+
+
+
+a {
+    color: #275ac7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(252, 252, 252);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode header {
+    background: #333;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode a {
+    color: #ffcc00;
+}
+
+.dark-mode section {
+    background: #222;
+    color: white;
+}
+body {
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ảnh phủ toàn bộ trang */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Giảm độ tối xuống 20% */
+    backdrop-filter: blur(5px); /* Có thể giảm độ mờ nếu cần */
+    z-index: -1;
+}
+
